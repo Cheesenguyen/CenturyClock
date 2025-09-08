@@ -1,12 +1,13 @@
 clean:
-	echo "Replace this by command(s) to clean all the build files"
+	rm -rf build
 
 build:
-	echo "Replace this by command(s) to build the project"
+	mkdir -p build
+	gcc -c  -Iinc main.c -o build/main.o		
+	gcc build/main.o -Llib -lecall -o build/main
 
 run:
-	echo "Replace this by command(s) to run the Century Clock"
-
+	./build/main
 all: clean build run
 
 help:
