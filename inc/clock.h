@@ -2,13 +2,10 @@
 #define CLOCK_H
 
 #include <stdint.h>
-#include <stdio.h>
 #include <stdbool.h>
 #include "../inc/main.h"
-#include "../inc/clock.h"
 #include "../inc/constant.h"
 
-extern bool b_clock_overflow;
 
 bool CLOCK_IncreaseOneSecond();
 bool CLOCK_IncreaseOneMinute();
