@@ -21,5 +21,5 @@ extern uint16_t g_clock_month;
 extern uint16_t g_clock_year; 
 
 // Font hiển thị chữ số (con trỏ hằng)
-extern const uint8_t g_p_font_digit[];
+extern const uint8_t *g_p_font_digit;
 #endif
