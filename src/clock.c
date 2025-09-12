@@ -85,6 +85,7 @@ bool CLOCK_IncreaseByOne(uint16_t *p_clock_counter, int max_value, bool b_direct
             clock_counter -= 1; 
         }
     }
+    *p_clock_counter = clock_counter;
     return b_clock_overflow;
 }
 

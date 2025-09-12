@@ -23,18 +23,22 @@ bool CCLOCK_Wait1sSignal(){
     }
 }
 
-void CCLOCK_UpdateTime(){
-    if(g_1s_signal == true){
+void CCLOCK_UpdateTime() {
+    if (g_1s_signal == true) {
         g_1s_signal = false;
-        b_clock_overflow = CLOCK_IncreaseOneSecond();           // b_clock_overflow bieens return o ham khac
-        if(b_clock_overflow == false){
+
+        bool b_clock_overflow = CLOCK_IncreaseOneSecond();
+        if (b_clock_overflow == true) {
             b_clock_overflow = CLOCK_IncreaseOneMinute();
-            if(b_clock_overflow == false){
+            if (b_clock_overflow == true) {
                 b_clock_overflow = CLOCK_IncreaseOneHour();
-                if(b_clock_overflow == false){
+                if (b_clock_overflow == true) {
                     b_clock_overflow = CLOCK_IncreaseOneDay(g_clock_month, g_clock_year);
-                    if(b_clock_overflow == false){
-                        CLOCK_IncreaseOneYear();
+                    if (b_clock_overflow == true) {
+                        b_clock_overflow = CLOCK_IncreaseOneMonth();
+                        if (b_clock_overflow == true) {
+                            CLOCK_IncreaseOneYear();
+                        }
                     }
                 }
             }
