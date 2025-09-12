@@ -24,8 +24,8 @@
 #define DEFAULT_YEAR         2024   //editable
 
 // Colors
-#define COLOR_DEFAULT        0xFFFF00   //editable
-#define COLOR_BACKGROUND     0x00FF00        //editable
+#define COLOR_DEFAULT        0xFFFF00     //editable
+#define COLOR_BACKGROUND     0x000000        //editable
 
 // Font size
 #define FONT_WIDTH           5

@@ -1,12 +1,11 @@
 #include <stdint.h>
 #include "../inc/ecall.h"
 
-
 void ECALL_100(uint32_t position, uint32_t color){
     // giải mã tọa độ từ position
     uint16_t x = (position >> 16) & 0xFFFF;
-    uint16_t y = position & 0xFFFF;          // hàng
-
+    uint16_t y = position & 0xFFFF;          
+    
     // Giải mã màu từ color (0x00RRGGBB)
     uint8_t r = (color >> 16) & 0xFF;
     uint8_t g = (color >> 8) & 0xFF;
@@ -25,6 +24,3 @@ void ECALL_100(uint32_t position, uint32_t color){
     printf("\033[u"); // restore cursor
 
 }
-
-
-

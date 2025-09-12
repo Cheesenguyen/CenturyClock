@@ -24,21 +24,17 @@ void LEDMATRIX_DisplayDigit(int digit, int x, int y, uint32_t color){
 }
 
 void LEDMATRIX_DisplayRow(const uint8_t row, int width, int x, int y, uint32_t color){
-    while (1) {
-    width = width - 1;
-    if (width >= 0) {
-        if ((row & (0x1 << width)) != 0) {
-            LEDMATRIX_DisplayPixel(x, y, color);
-        } else {
-            LEDMATRIX_DisplayPixel(x, y, COLOR_BACKGROUND);
-        }
-        x = x + 1;
-    } else {
-        break;
+    for (int i = 0; i < width; i++) {
+        // Lấy bit từ MSB sang LSB
+        int bit = (row >> (width - 1 - i)) & 0x1;
+        if (bit) {
+            LEDMATRIX_DisplayPixel(x + i, y, color);
+        } //else {
+            //LEDMATRIX_DisplayPixel(x + i, y, COLOR_BACKGROUND);
+        //}
     }
-    }
-
 }
+
 
 void LEDMATRIX_DisplayPixel(int x, int y, uint32_t color){
     int position = (x << 16) | y;

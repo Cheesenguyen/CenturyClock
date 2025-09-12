@@ -53,8 +53,5 @@ void CCLOCK_DisplayClock(){
     DISPLAY_DisplayDay();
     DISPLAY_DisplayMonth();
     DISPLAY_DisplayYear();
-    printf("Time: %02d:%02d:%02d %02d/%02d/%04d\n", 
-       g_clock_hour, g_clock_minute, g_clock_second, 
-       g_clock_day, g_clock_month, g_clock_year);
 
 }

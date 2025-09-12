@@ -35,7 +35,7 @@ int main(void) {
 
     // 3. Test LEDMATRIX_DisplayDigit
     // hiển thị một chữ số vàng
-    LEDMATRIX_DisplayDigit(5,0,0,COLOR_DEFAULT);
+    LEDMATRIX_DisplayDigit(1,0,0,COLOR_DEFAULT);
 
     return 0;
 }
