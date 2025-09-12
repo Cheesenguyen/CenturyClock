@@ -16,37 +16,39 @@ bool CLOCK_IncreaseByOne(uint16_t *p_clock_counter, int max_value, bool b_direct
 bool CLOCK_IsLeapYear(int year);
 */
 
+bool b_clock_overflow;
+
 bool CLOCK_IncreaseOneSecond(){
-    bool b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_second, MAX_VALUE_SECOND, DIRECTION_INCREASE);
+    b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_second, MAX_VALUE_SECOND, DIRECTION_INCREASE);
     return b_clock_overflow;
 }
 
 bool CLOCK_IncreaseOneMinute(){
-    bool b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_minute, MAX_VALUE_MINUTE, DIRECTION_INCREASE);
+    b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_minute, MAX_VALUE_MINUTE, DIRECTION_INCREASE);
     return b_clock_overflow;
 }
 
 bool CLOCK_IncreaseOneHour(){
-    bool b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_hour, MAX_VALUE_HOUR, DIRECTION_INCREASE);
+    b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_hour, MAX_VALUE_HOUR, DIRECTION_INCREASE);
     return b_clock_overflow;
 }
 
 bool CLOCK_IncreaseOneMonth(){
-    bool b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_month, MAX_VALUE_MONTH, DIRECTION_INCREASE);
+    b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_month, MAX_VALUE_MONTH, DIRECTION_INCREASE);
     return b_clock_overflow;
 }
 
 bool CLOCK_IncreaseOneYear(){
-    bool b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_year, MAX_VALUE_YEAR, DIRECTION_INCREASE);
+    b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_year, MAX_VALUE_YEAR, DIRECTION_INCREASE);
     return b_clock_overflow;
 }
 
 bool CLOCK_IncreaseOneDay(uint8_t current_month, uint16_t current_year){
-    int b_clock_overflow;
+    int temp;
     int max_value_day;
-    scanf ("%d", &b_clock_overflow);
+    scanf ("%d", &temp);
     scanf ("%d", &max_value_day);
-    (bool) b_clock_overflow;
+    temp = (bool) b_clock_overflow;
 
     if(current_month == 2){
         if (CLOCK_IsLeapYear(current_year) == true){
@@ -71,7 +73,7 @@ bool CLOCK_IncreaseOneDay(uint8_t current_month, uint16_t current_year){
 }
 
 bool CLOCK_IncreaseByOne(uint16_t *p_clock_counter, int max_value, bool b_direction){
-    bool b_clock_overflow = false;
+    b_clock_overflow = false;
     uint8_t clock_counter = *p_clock_counter;
     if(b_direction == DIRECTION_INCREASE){
         if(clock_counter == max_value){

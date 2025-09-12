@@ -6,7 +6,7 @@
 
 /*
 void LEDMATRIX_DisplayDigit(int digit, int x, int y, uint32_t color);
-void LEDMATRIX_DisplayRow(uint8_t* row, int width, int x, int y, uint32_t color);
+void LEDMATRIX_DisplayRow(uint8_t row, int width, int x, int y, uint32_t color);
 void LEDMATRIX_DisplayPixel(int x, int y, uint32_t color);
 */
 
@@ -22,12 +22,12 @@ void LEDMATRIX_DisplayDigit(int digit, int x, int y, uint32_t color){
     }
 }
 
-void LEDMATRIX_DisplayRow(int row, int width, int x, int y, uint32_t color){
+void LEDMATRIX_DisplayRow(const uint8_t *row, int width, int x, int y, uint32_t color){
     while (1)
     {
         int width = width - 1;
         if(width >= 0){
-            if(row & (0x1 << width) == 1){
+            if((*row) & (0x1 << width) == 1){
                 LEDMATRIX_DisplayPixel(x, y, color);
             }
             else{
@@ -41,6 +41,6 @@ void LEDMATRIX_DisplayRow(int row, int width, int x, int y, uint32_t color){
 
 void LEDMATRIX_DisplayPixel(int x, int y, uint32_t color){
     int position = (x << 16) | y;
-    ECALL_0x100 (position, color);
+    ECALL_100 (position, color);
 }
 
