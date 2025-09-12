@@ -29,9 +29,9 @@ void LEDMATRIX_DisplayRow(const uint8_t row, int width, int x, int y, uint32_t c
         int bit = (row >> (width - 1 - i)) & 0x1;
         if (bit) {
             LEDMATRIX_DisplayPixel(x + i, y, color);
-        } //else {
-            //LEDMATRIX_DisplayPixel(x + i, y, COLOR_BACKGROUND);
-        //}
+        }else {
+            LEDMATRIX_DisplayPixel(x + i, y, COLOR_BACKGROUND);
+        }
     }
 }
 

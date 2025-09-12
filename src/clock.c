@@ -4,6 +4,7 @@
 #include "../inc/main.h"
 #include "../inc/clock.h"
 #include "../inc/constant.h"
+#include "../inc/ecall.h"
 
 /*
 bool CLOCK_IncreaseOneSecond();

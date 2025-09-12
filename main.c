@@ -77,7 +77,6 @@ void MAIN_Init(void){
     g_1s_signal = false;
 
     CCLOCK_DisplayClock();
-
 }
 
 void MAIN_Loop(){

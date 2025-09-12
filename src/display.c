@@ -2,6 +2,7 @@
 #include "../inc/main.h"
 #include "../inc/constant.h"
 #include "../inc/display.h"
+#include "../inc/ecall.h"
 
 /*
 void DISPLAY_DisplaySecond();

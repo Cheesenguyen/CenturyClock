@@ -9,7 +9,7 @@ build:
 	gcc -c -Iinc src/display.c -o build/display.o
 	gcc -c -Iinc src/ecall.c -o build/ecall.o
 	gcc -c -Iinc src/ledmatrix.c -o build/ledmatrix.o
-	gcc build/*.o -Llib -lecall -o build/main
+	gcc build/*.o -o build/main -Llib -lecall 
 run:
 	./build/main
 	

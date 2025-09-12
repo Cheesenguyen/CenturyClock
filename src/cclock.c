@@ -4,6 +4,7 @@
 #include "../inc/clock.h"
 #include "../inc/cclock.h"
 #include "../inc/display.h"
+#include "../inc/ecall.h"
 
 /*
 bool CCLOCK_Wait1sSignal();
