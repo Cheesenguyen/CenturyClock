@@ -15,9 +15,11 @@ bool CCLOCK_Wait1sSignal(){
     if(g_cycle_1s_count == CYCLE_1S_WAIT){
         g_cycle_1s_count = 0;
         g_1s_signal = true;
+        return true;
     }
     else{
         g_cycle_1s_count += 1;
+        return false;
     }
 }
 

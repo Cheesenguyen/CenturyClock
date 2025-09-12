@@ -16,39 +16,30 @@ bool CLOCK_IncreaseByOne(uint16_t *p_clock_counter, int max_value, bool b_direct
 bool CLOCK_IsLeapYear(int year);
 */
 
-bool b_clock_overflow;
+//bool b_clock_overflow;
 
-bool CLOCK_IncreaseOneSecond(){
-    b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_second, MAX_VALUE_SECOND, DIRECTION_INCREASE);
-    return b_clock_overflow;
+bool CLOCK_IncreaseOneSecond(void){
+    return CLOCK_IncreaseByOne(&g_clock_second, MAX_VALUE_SECOND, DIRECTION_INCREASE);
 }
 
-bool CLOCK_IncreaseOneMinute(){
-    b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_minute, MAX_VALUE_MINUTE, DIRECTION_INCREASE);
-    return b_clock_overflow;
+bool CLOCK_IncreaseOneMinute(void){
+    return CLOCK_IncreaseByOne(&g_clock_minute, MAX_VALUE_MINUTE, DIRECTION_INCREASE);
 }
 
-bool CLOCK_IncreaseOneHour(){
-    b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_hour, MAX_VALUE_HOUR, DIRECTION_INCREASE);
-    return b_clock_overflow;
+bool CLOCK_IncreaseOneHour(void){
+    return CLOCK_IncreaseByOne(&g_clock_hour, MAX_VALUE_HOUR, DIRECTION_INCREASE);
 }
 
-bool CLOCK_IncreaseOneMonth(){
-    b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_month, MAX_VALUE_MONTH, DIRECTION_INCREASE);
-    return b_clock_overflow;
+bool CLOCK_IncreaseOneMonth(void){
+    return CLOCK_IncreaseByOne(&g_clock_month, MAX_VALUE_MONTH, DIRECTION_INCREASE);
 }
 
-bool CLOCK_IncreaseOneYear(){
-    b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_year, MAX_VALUE_YEAR, DIRECTION_INCREASE);
-    return b_clock_overflow;
+bool CLOCK_IncreaseOneYear(void){
+    return CLOCK_IncreaseByOne(&g_clock_year, MAX_VALUE_YEAR, DIRECTION_INCREASE);
 }
 
 bool CLOCK_IncreaseOneDay(uint8_t current_month, uint16_t current_year){
-    int temp;
     int max_value_day;
-    scanf ("%d", &temp);
-    scanf ("%d", &max_value_day);
-    temp = (bool) b_clock_overflow;
 
     if(current_month == 2){
         if (CLOCK_IsLeapYear(current_year) == true){
@@ -68,13 +59,14 @@ bool CLOCK_IncreaseOneDay(uint8_t current_month, uint16_t current_year){
            max_value_day = MAX_VALUE_DAY_30;
         }
     }
-    b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_day, max_value_day, DIRECTION_INCREASE);
-    return b_clock_overflow;
+    //b_clock_overflow = CLOCK_IncreaseByOne(&g_clock_day, max_value_day, DIRECTION_INCREASE);
+    return CLOCK_IncreaseByOne(&g_clock_day, max_value_day, DIRECTION_INCREASE);
 }
 
 bool CLOCK_IncreaseByOne(uint16_t *p_clock_counter, int max_value, bool b_direction){
-    b_clock_overflow = false;
+    bool b_clock_overflow = false;
     uint8_t clock_counter = *p_clock_counter;
+
     if(b_direction == DIRECTION_INCREASE){
         if(clock_counter == max_value){
             b_clock_overflow = true;
@@ -97,14 +89,10 @@ bool CLOCK_IncreaseByOne(uint16_t *p_clock_counter, int max_value, bool b_direct
 }
 
 bool CLOCK_IsLeapYear(int year){
-    if(year % 100 == 0){
-        return false;
-    }
-    else{
-        if(year & 0b11 == 0){
-            return true;
-        }
-        else return false;
-    }
+    if ((year % 400) == 0) return true;
+    if ((year % 100) == 0) return false;
+    if ((year % 4) == 0)   return true;
+    return false;
 }
+
 

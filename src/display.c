@@ -37,7 +37,7 @@ void DISPLAY_DisplayNumber(int number, int position_x, int position_y, int displ
     int y = position_y;
     while(display_width != 0){
         int digit = number % 10;
-        int number = number / 10;
+        number = number / 10;
         LEDMATRIX_DisplayDigit(digit, x, y, color);
         x = x - (FONT_WIDTH + 1); 
         display_width = display_width - 1;

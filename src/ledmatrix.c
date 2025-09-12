@@ -13,11 +13,11 @@ void LEDMATRIX_DisplayPixel(int x, int y, uint32_t color);
 
 void LEDMATRIX_DisplayDigit(int digit, int x, int y, uint32_t color){
     int height = FONT_HEIGHT;
-    const uint8_t *p_row = g_p_font_digit + digit;
+    const uint8_t *p_row = g_p_font_digit + digit* FONT_HEIGHT;
 
     while(height > 0){
         height = height - 1;
-        p_row = p_row + FONT_WIDTH;
+        p_row = p_row + 1;
         LEDMATRIX_DisplayRow(*p_row, FONT_WIDTH, x, y, color);
         y = y + 1;
     }
@@ -27,7 +27,7 @@ void LEDMATRIX_DisplayRow(const uint8_t row, int width, int x, int y, uint32_t c
     while (1) {
     width = width - 1;
     if (width >= 0) {
-        if (row & ((0x1 << width) != 0 )) {
+        if ((row & (0x1 << width)) != 0) {
             LEDMATRIX_DisplayPixel(x, y, color);
         } else {
             LEDMATRIX_DisplayPixel(x, y, COLOR_BACKGROUND);

@@ -27,15 +27,15 @@ const uint8_t *g_p_font_digit = &font_digit_data[0][0];
 int main(void) {
     // 1. Test LEDMATRIX_DisplayPixel
     // hiển thị một pixel vàng
-    LEDMATRIX_DisplayPixel(0, 0, COLOR_DEFAULT);
+    //LEDMATRIX_DisplayPixel(0, 0, COLOR_DEFAULT);
 
     // 2. Test LEDMATRIX_DisplayRow
     // hiển thị 1 hàng bit đơn giản (toàn vàng)
-    LEDMATRIX_DisplayRow(0x1F, FONT_WIDTH, 0, 2, COLOR_DEFAULT);
+    //LEDMATRIX_DisplayRow(0x1F, FONT_WIDTH, 0, 2, COLOR_DEFAULT);
 
     // 3. Test LEDMATRIX_DisplayDigit
     //hiển thị một chữ số vàng
-    LEDMATRIX_DisplayDigit(0, 0, 4, COLOR_DEFAULT);
+    LEDMATRIX_DisplayDigit(5, 0, 4, COLOR_DEFAULT);
 
 
 
