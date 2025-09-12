@@ -25,7 +25,7 @@
 
 // Colors
 #define COLOR_DEFAULT        0xFFFF00   //editable
-#define COLOR_BACKGROUND     0x0        //editable
+#define COLOR_BACKGROUND     0x00FF00        //editable
 
 // Font size
 #define FONT_WIDTH           5

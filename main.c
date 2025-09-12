@@ -59,9 +59,6 @@ const uint8_t *g_p_font_digit = &font_digit_data[0][0];
 void MAIN_Run(void);
 void MAIN_Init(void);
 void MAIN_Loop(void);
-void CCLOCK_DisplayClock(void);
-bool CCLOCK_Wait1sSignal(void);
-void CCLOCK_UpdateTime(void);
 
 /* Private user code ---------------------------------------------------------*/
 void MAIN_Run(void) {

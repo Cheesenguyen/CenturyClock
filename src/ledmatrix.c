@@ -13,7 +13,7 @@ void LEDMATRIX_DisplayPixel(int x, int y, uint32_t color);
 
 void LEDMATRIX_DisplayDigit(int digit, int x, int y, uint32_t color){
     int height = FONT_HEIGHT;
-    const uint8_t *p_row = g_p_font_digit + digit* FONT_HEIGHT;
+    const uint8_t *p_row = g_p_font_digit + digit*FONT_HEIGHT;
 
     while(height > 0){
         height = height - 1;

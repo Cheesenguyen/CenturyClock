@@ -1,6 +1,6 @@
 #include <stdint.h>
-#include "constant.h"
-#include "ledmatrix.h"
+#include "../inc/constant.h"
+#include "../inc/ledmatrix.h"
 
 // ----------------------
 // Định nghĩa dữ liệu font 5x8 từ tài liệu
@@ -34,10 +34,8 @@ int main(void) {
     //LEDMATRIX_DisplayRow(0x1F, FONT_WIDTH, 0, 2, COLOR_DEFAULT);
 
     // 3. Test LEDMATRIX_DisplayDigit
-    //hiển thị một chữ số vàng
-    LEDMATRIX_DisplayDigit(5, 0, 4, COLOR_DEFAULT);
-
-
+    // hiển thị một chữ số vàng
+    LEDMATRIX_DisplayDigit(5,0,0,COLOR_DEFAULT);
 
     return 0;
 }
