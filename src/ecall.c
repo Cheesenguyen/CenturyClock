@@ -20,7 +20,7 @@ void ECALL_100(uint32_t position, uint32_t color){
     // Trình tự: lưu vị trí -> nhảy -> in màu -> reset -> khôi phục
     printf("\033[s"); // save cursor
     printf("\033[%u;%uH", y + 1, x + 1); // move cursor (1-based)
-    printf("\033[48;2;%u;%u;%um█\033[0m", r, g, b); // set background color + block
+    printf("\033[38;2;%u;%u;%um█\033[0m", r, g, b); 
     printf("\033[u"); // restore cursor
 
 }
