@@ -6,12 +6,12 @@
 #include "../inc/display.h"
 #include "../inc/ecall.h"
 
-/*
-bool CCLOCK_Wait1sSignal();
-void CCLOCK_UpdateTime();
-void CCLOCK_DisplayClock();
-*/
-
+/**
+  * @brief  Generates a 1-second signal based on the cycle counter
+  * @param  none
+  * @retval true: one second has elapsed (signal generated)
+  * @retval false: not yet one second
+  */
 bool CCLOCK_Wait1sSignal(){
     if(g_cycle_1s_count == CYCLE_1S_WAIT){
         g_cycle_1s_count = 0;
@@ -24,6 +24,11 @@ bool CCLOCK_Wait1sSignal(){
     }
 }
 
+/**
+  * @brief  Updates the clock time when a 1-second signal is received, cascading overflow from seconds up to years
+  * @param  none
+  * @retval none
+  */
 void CCLOCK_UpdateTime() {
     if (g_1s_signal == true) {
         g_1s_signal = false;
@@ -47,6 +52,10 @@ void CCLOCK_UpdateTime() {
     }
 }
 
+/**
+  * @brief  Displays the complete clock on the LED matrix by drawing hour, minute, second, day, month, and year
+  * @retval none
+  */
 void CCLOCK_DisplayClock(){
     DISPLAY_DisplayHour();
     DISPLAY_DisplayMinute();
