@@ -66,6 +66,11 @@ void MAIN_Run(void) {
     MAIN_Loop();
 }
 
+/**
+  * @brief  Initializes the clock system with default values and displays the initial clock on the LED matrix
+  * @param none
+  * @retval none
+  */
 void MAIN_Init(void){
     g_clock_second = DEFAULT_SECOND;
     g_clock_minute = DEFAULT_MINUTE;
@@ -79,6 +84,11 @@ void MAIN_Init(void){
     CCLOCK_DisplayClock();
 }
 
+/**
+  * @brief  Main loop that waits for a 1-second signal, updates the time, and refreshes the LED clock display
+  * @param  none
+  * @retval none
+  */
 void MAIN_Loop(){
     while (1) {
         if (CCLOCK_Wait1sSignal() == true) {
@@ -89,11 +99,10 @@ void MAIN_Loop(){
 }
 
 /**
-  * @brief  The application entry point.
-  * @retval int
+  * @brief  Entry point of the program. It starts the main clock routine 
+  * @param  none
+  * @retval indicates normal program termination
   */
-
-  
 int main(void) {
     MAIN_Run();
     return 0;
