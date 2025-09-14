@@ -1,6 +1,13 @@
 #include <stdint.h>
 #include "../inc/ecall.h"
 
+/** 
+ * @brief  Draws a colored pixel at position (x,y) in the terminal using ANSI escape codes
+ * @param  position: packed coordinate (high 16 bits = x, low 16 bits = y)
+ * @param  color: pixel color 
+ * @retval none
+
+*/
 void ECALL_100(uint32_t position, uint32_t color){
     // giải mã tọa độ từ position
     uint16_t x = (position >> 16) & 0xFFFF;
