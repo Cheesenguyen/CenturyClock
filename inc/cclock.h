@@ -3,9 +3,10 @@
 
 // Includes
 #include <stdint.h>
-#include <stdbool.h>
-#include "../inc/main.h"
-#include "../inc/constant.h"
+#include "main.h"
+#include "constant.h"
+#include "clock.h"
+#include "display.h"
 
 
 bool CCLOCK_Wait1sSignal();

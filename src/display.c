@@ -2,6 +2,7 @@
 #include "display.h"
 #include "main.h"
 #include "constant.h"
+#include "ledmatrix.h"
 
 /**
   * @brief  display two numbers of second

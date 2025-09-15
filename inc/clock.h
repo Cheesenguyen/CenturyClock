@@ -2,9 +2,10 @@
 #define CLOCK_H
 
 #include <stdint.h>
+#include <stdio.h>
 #include <stdbool.h>
-#include "../inc/main.h"
-#include "../inc/constant.h"
+#include "main.h"
+#include "constant.h"
 
 
 bool CLOCK_IncreaseOneSecond();

@@ -2,9 +2,9 @@
 #define DISPLAY_H
 
 #include <stdint.h>
-#include "../inc/main.h"
-#include "../inc/constant.h"
-#include "../inc/ledmatrix.h"
+#include "main.h"
+#include "constant.h"
+#include "ledmatrix.h"
 
 void DISPLAY_DisplaySecond();
 void DISPLAY_DisplayMinute();

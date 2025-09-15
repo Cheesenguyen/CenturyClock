@@ -2,10 +2,8 @@
 #define LEDMATRIX_H
 
 #include <stdint.h>
-#include <stdbool.h>
-
-#include "constant.h" 
 #include "main.h"
+#include "constant.h"
 #include "ecall.h"
 
 void LEDMATRIX_DisplayDigit(int digit, int x, int y, uint32_t color);

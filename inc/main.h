@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdint.h>
+#include "constant.h"
+#include "cclock.h"
 
 
 extern int g_cycle_1s_count;
