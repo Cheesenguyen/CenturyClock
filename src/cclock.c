@@ -1,10 +1,10 @@
 #include <stdint.h>
-#include "../inc/main.h"
-#include "../inc/constant.h"
-#include "../inc/clock.h"
-#include "../inc/cclock.h"
-#include "../inc/display.h"
-#include "../inc/ecall.h"
+#include "cclock.h"
+#include "main.h"
+#include "constant.h"
+#include "clock.h"
+#include "display.h"
+
 
 /**
   * @brief  Generates a 1-second signal based on the cycle counter

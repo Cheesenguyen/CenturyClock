@@ -7,11 +7,10 @@ build:
 	gcc -c -Iinc src/cclock.c -o build/cclock.o
 	gcc -c -Iinc src/clock.c -o build/clock.o
 	gcc -c -Iinc src/display.c -o build/display.o
-	gcc -c -Iinc src/ecall.c -o build/ecall.o
 	gcc -c -Iinc src/ledmatrix.c -o build/ledmatrix.o
-	gcc build/*.o -o build/main -Llib -lecall 
+	gcc build/*.o -o build/centuryclock-v0.0.0-ubuntu22.04-x64-gcc11.4.0 -Llib -lecall 
 run:
-	./build/main
+	./build/centuryclock-v0.0.0-ubuntu22.04-x64-gcc11.4.0
 	
 all: clean build run
 

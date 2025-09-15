@@ -1,8 +1,7 @@
 #include <stdint.h>
-#include "../inc/main.h"
-#include "../inc/constant.h"
-#include "../inc/display.h"
-#include "../inc/ecall.h"
+#include "display.h"
+#include "main.h"
+#include "constant.h"
 
 /**
   * @brief  display two numbers of second

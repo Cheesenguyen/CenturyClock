@@ -1,10 +1,10 @@
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
-#include "../inc/constant.h"
-#include "../inc/cclock.h"
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdint.h>
+#include "main.h"
+#include "constant.h"
+#include "cclock.h"
 
 /* Global variables ----------------------------------------------------------*/
 // Bộ đếm chu kỳ 1s

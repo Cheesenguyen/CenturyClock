@@ -1,7 +1,8 @@
 #include <stdint.h>
-#include "../inc/constant.h"
-#include "../inc/main.h"
-#include "../inc/ledmatrix.h"
+#include "ledmatrix.h"
+#include "main.h"
+#include "constant.h"
+#include "ecall.h"
 
 /*
 void LEDMATRIX_DisplayDigit(int digit, int x, int y, uint32_t color);
