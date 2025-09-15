@@ -1,7 +1,6 @@
 #include <stdint.h>
 #include "../inc/constant.h"
 #include "../inc/main.h"
-#include "../inc/ecall.h"
 #include "../inc/ledmatrix.h"
 
 /*
