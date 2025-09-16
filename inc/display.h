@@ -1,6 +1,7 @@
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
+#include <stdint.h>
 
 void DISPLAY_DisplaySecond();
 void DISPLAY_DisplayMinute();

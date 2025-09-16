@@ -1,7 +1,9 @@
-#include <stdint.h>
 #include "ledmatrix.h"
 #include "main.h"
 #include "constant.h"
+
+#include <stdint.h>
+
 #include "ecall.h"
 
 /*

@@ -1,9 +1,9 @@
-#include <stdint.h>
-#include <stdio.h>
-#include <stdbool.h>
 #include "clock.h"
 #include "main.h"
 #include "constant.h"
+
+#include <stdint.h>
+#include <stdbool.h>
 
 /**
   * @brief Increments the second counter by one, checking for overflow

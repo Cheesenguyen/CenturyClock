@@ -1,8 +1,10 @@
-#include <stdint.h>
-#include <stdbool.h>
 #include "cclock.h"
 #include "main.h"
 #include "constant.h"
+
+#include <stdint.h>
+#include <stdbool.h>
+
 #include "clock.h"
 #include "display.h"
 
