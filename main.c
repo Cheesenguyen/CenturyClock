@@ -1,10 +1,6 @@
 /* Includes ------------------------------------------------------------------*/
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdint.h>
 #include "main.h"
 #include "constant.h"
-#include "cclock.h"
 
 /* Global variables ----------------------------------------------------------*/
 // Bộ đếm chu kỳ 1s
@@ -41,8 +37,13 @@ const uint8_t *g_p_font_digit = &font_digit_data[0][0];
 
 
 /* Private includes ----------------------------------------------------------*/
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdint.h>
 
+#include "cclock.h"
 #include "ecall.h"
+
 
 /*
 
