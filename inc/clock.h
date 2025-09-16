@@ -4,8 +4,6 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include "main.h"
-#include "constant.h"
 
 
 bool CLOCK_IncreaseOneSecond();

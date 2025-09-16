@@ -3,11 +3,7 @@
 
 // Includes
 #include <stdint.h>
-#include "main.h"
-#include "constant.h"
-#include "clock.h"
-#include "display.h"
-
+#include <stdbool.h>
 
 bool CCLOCK_Wait1sSignal();
 void CCLOCK_UpdateTime();
