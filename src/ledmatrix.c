@@ -23,7 +23,7 @@ void LEDMATRIX_DisplayPixel(int x, int y, uint32_t color);
 
 void LEDMATRIX_DisplayDigit(int digit, int x, int y, uint32_t color){
     int height = FONT_HEIGHT;
-    const uint8_t *p_row = g_p_font_digit + digit*FONT_HEIGHT;
+    const uint8_t *p_row = g_p_font_digit -1 + digit*FONT_HEIGHT;
 
     while(height > 0){
         height = height - 1;
@@ -43,15 +43,20 @@ void LEDMATRIX_DisplayDigit(int digit, int x, int y, uint32_t color){
   * @retval none
   */
 
-void LEDMATRIX_DisplayRow(const uint8_t row, int width, int x, int y, uint32_t color){
-    for (int i = 0; i < width; i++) {
-        // Lấy bit từ MSB sang LSB
-        int bit = (row >> (width - 1 - i)) & 0x1;
-        if (bit) {
-            LEDMATRIX_DisplayPixel(x + i, y, color);
-        }else {
-            LEDMATRIX_DisplayPixel(x + i, y, COLOR_BACKGROUND);
+void LEDMATRIX_DisplayRow(const uint8_t row, int width, int x, int y, uint32_t color)
+{
+    while(width > 0)
+    {
+        width--;
+        if(row & (0x1 << width))
+        {
+            LEDMATRIX_DisplayPixel(x, y, color);
         }
+        else
+        {
+            LEDMATRIX_DisplayPixel(x, y, COLOR_BACKGROUND);
+        }
+        x++;
     }
 }
 
