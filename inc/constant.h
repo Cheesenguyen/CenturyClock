@@ -1,3 +1,6 @@
+#ifndef CONSTANT_H
+#define CONSTANT_H
+
 #define CYCLE_1S_WAIT      3        //Số lần đếm ngược còn lại trước khi báo hiệu 1 giây đã trôi qua
 
 #define DIRECTION_INCREASE true
@@ -49,3 +52,4 @@
 #define POS_YY_X             31
 #define POS_YY_Y             13
 
+#endif

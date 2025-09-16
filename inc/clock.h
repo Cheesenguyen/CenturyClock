@@ -1,11 +1,6 @@
 #ifndef CLOCK_H
 #define CLOCK_H
 
-#include <stdint.h>
-#include <stdio.h>
-#include <stdbool.h>
-
-
 bool CLOCK_IncreaseOneSecond();
 bool CLOCK_IncreaseOneMinute();
 bool CLOCK_IncreaseOneHour();
